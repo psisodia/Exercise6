@@ -1,10 +1,9 @@
+from sys import argv
+script, filename = argv
 
-
-def data_to_dict():
-    #from sys import argv
-    #filename = argv[1]
+def data_to_dict(filename):
     restaurant_scores = {}
-    my_file = open("score.txt")
+    my_file = open(filename)
 
     for line in my_file:
         line = line.rstrip()
@@ -19,9 +18,8 @@ def alphabetize(restaurant_scores):
         print "Restaurant %s is rated %s." % (key, restaurant_scores[key])
 
 def main():
-    #from sys import argv
-    #filename = argv[1]
-    dict_variable = data_to_dict()
+
+    dict_variable = data_to_dict(filename)
     alphabetize(dict_variable)
 
 if __name__ == "__main__":
